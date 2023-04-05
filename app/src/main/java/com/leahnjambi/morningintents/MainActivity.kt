@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnMpesa :Button
     lateinit var btnWeb :Button
     lateinit var btnCam :Button
+    lateinit var btnMap :Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         btnMpesa = findViewById(R.id.btnMpesa)
         btnWeb = findViewById(R.id.btnWeb)
         btnShare = findViewById(R.id.btnShare)
+        btnMap = findViewById(R.id.mBtnMap)
 
         // Set onClick listeners to all Buttons
         btnCall.setOnClickListener {
@@ -86,6 +88,10 @@ class MainActivity : AppCompatActivity() {
             shareIntent.putExtra(Intent.EXTRA_TEXT, "Hey, download this app from https://www")
             startActivity(shareIntent)
 
+        }
+        btnMap.setOnClickListener {
+            var ramani = Intent(this,MapsActivity::class.java)
+            startActivity(ramani)
         }
     }
 }
